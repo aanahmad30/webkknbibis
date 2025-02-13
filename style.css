@@ -101,6 +101,48 @@ body {
     left: 20px;
 }
 
+/* Style submenu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    min-width: 200px; /* Atur lebar minimum submenu */
+}
+
+.dropdown .submenu li {
+    padding: 0 20px;
+}
+
+.dropdown .submenu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Hindari teks memotong ke baris berikutnya */
+}
+
+.dropdown .submenu li a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Show submenu on hover */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
 
 #mobile {
     display: none;
@@ -916,6 +958,18 @@ footer a:hover {
 
     #navbar li {
         margin-bottom: 25px;
+    }
+
+    .dropdown .submenu {
+        position: relative; /* Submenu tetap mengikuti dropdown induk */
+        top: auto; /* Hilangkan posisi absolute untuk responsivitas */
+        left: auto; /* Hilangkan posisi kiri */
+        min-width: 200px; /* Tetap samakan lebar minimum dengan desktop */
+        box-shadow: none; /* Opsi untuk menghilangkan bayangan */
+    }
+
+    .dropdown:hover .submenu {
+        display: block;
     }
 
 
